@@ -1,0 +1,495 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="utf-8">
+<title>Curriculum Vitae</title>
+
+<style>
+
+body {
+    font-family: "Times New Roman", serif;
+    font-size: 16px;
+    background-color: white;
+}
+
+.tabla-principal {
+    width: 570px;
+    margin: 10px auto;
+    border: 1px solid #999;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.titulo {
+    height: 105px;
+    text-align: center;
+    vertical-align: middle;
+    border-right: 1px solid #999;
+}
+
+.titulo h1 {
+    font-size: 26px;
+    margin: 0;
+}
+
+.foto {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.recuadro-foto {
+    display: flex;
+    width: 56px;
+    height: 70px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #999;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.recuadro-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.archivo-oculto {
+    display: none;
+}
+
+.contenido {
+    border-top: 1px solid #999;
+    padding: 62px 16px 55px;
+    vertical-align: top;
+}
+
+.seccion {
+    margin-bottom: 25px;
+}
+
+.seccion h2 {
+    font-size: 20px;
+    margin: 0 0 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #aaa;
+}
+
+.fila {
+    display: grid;
+    grid-template-columns: 58% 42%;
+    min-height: 20px;
+    align-items: center;
+}
+
+.campo {
+    width: 115px;
+    border: none;
+    border-bottom: 1px solid transparent;
+    background: white;
+    font-family: "Times New Roman", serif;
+    font-size: 16px;
+}
+
+.campo:focus {
+    outline: none;
+    border-bottom: 1px solid #777;
+}
+
+.linea {
+    min-height: 20px;
+    margin: 0;
+}
+
+.texto-largo {
+    width: 210px;
+    height: 20px;
+    border: none;
+    font-family: "Times New Roman", serif;
+    font-size: 16px;
+    vertical-align: middle;
+    resize: vertical;
+}
+
+.texto-largo:focus {
+    outline: none;
+    border-bottom: 1px solid #777;
+}
+
+.nota {
+    margin-top: 28px;
+}
+
+.botones {
+    margin-top: 22px;
+    text-align: center;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<form id="curriculum" name="curriculum"
+action="#" method="post"
+enctype="multipart/form-data">
+
+<table class="tabla-principal">
+
+<colgroup>
+<col style="width:475px;">
+<col style="width:95px;">
+</colgroup>
+
+<!-- TITULO Y FOTO -->
+
+<tr>
+
+<td class="titulo">
+<h1>CURRICULUM VITAE</h1>
+</td>
+
+<td class="foto">
+
+<label for="archivo-foto" class="recuadro-foto">
+
+<span id="texto-foto">FOTO</span>
+
+<img id="imagen-foto"
+alt="Foto del curriculum"
+style="display:none;">
+
+</label>
+
+<input type="file"
+id="archivo-foto"
+name="foto"
+class="archivo-oculto"
+accept="image/*">
+
+</td>
+
+</tr>
+
+<!-- CONTENIDO DEL CURRICULUM -->
+
+<tr>
+
+<td colspan="2" class="contenido">
+
+<!-- DATOS PERSONALES -->
+
+<div class="seccion">
+
+<h2>DATOS PERSONALES</h2>
+
+<div class="fila">
+
+<div>
+Apellidos:
+<input class="campo" type="text" name="apellidos">
+</div>
+
+<div>
+Nombre:
+<input class="campo" type="text" name="nombre">
+</div>
+
+</div>
+
+<div class="fila">
+
+<div>
+DNI:
+<input class="campo" type="text"
+name="dni" maxlength="8">
+</div>
+
+</div>
+
+<div class="fila">
+
+<div>
+Fecha de Nacimiento:
+<input class="campo" type="text" name="nacimiento">
+</div>
+
+<div>
+Lugar:
+<input class="campo" type="text" name="lugar">
+</div>
+
+</div>
+
+<div class="fila">
+
+<div>
+Dirección:
+<input class="campo" type="text" name="direccion">
+</div>
+
+</div>
+
+<div class="fila">
+
+<div>
+Localidad:
+<input class="campo" type="text" name="localidad">
+</div>
+
+<div>
+Provincia:
+<input class="campo" type="text" name="provincia">
+</div>
+
+</div>
+
+<div class="fila">
+
+<div>
+Teléfono:
+<input class="campo" type="tel" name="telefono">
+</div>
+
+</div>
+
+<div class="fila">
+
+<div>
+Teléfono Móvil:
+<input class="campo" type="tel" name="movil">
+</div>
+
+</div>
+
+<div class="fila">
+
+<div>
+E-Mail:
+<input class="campo" type="email" name="correo">
+</div>
+
+</div>
+
+</div>
+
+<!-- FORMACION Y ESTUDIOS -->
+
+<div class="seccion">
+
+<h2>FORMACIÓN Y ESTUDIOS</h2>
+
+<p class="linea">
+Titulación:
+<input class="campo" type="text" name="titulacion">
+</p>
+
+<p class="linea">
+Idiomas:
+<input class="campo" type="text" name="idiomas">
+</p>
+
+<p class="linea">
+Conocimientos informáticos:
+<input class="campo" type="text" name="informatica">
+</p>
+
+<p class="linea">
+Cursos y seminarios:
+<textarea class="texto-largo"
+name="cursos"></textarea>
+</p>
+
+</div>
+
+<!-- EXPERIENCIA PROFESIONAL -->
+
+<div class="seccion">
+
+<h2>EXPERIENCIA PROFESIONAL</h2>
+
+<p class="linea">
+Empresa:
+<input class="campo" type="text" name="empresa">
+</p>
+
+<p class="linea">
+Fecha:
+<input class="campo" type="text"
+name="fecha_experiencia">
+</p>
+
+<p class="linea">
+Puesto/Actividad desarrollada:
+<textarea class="texto-largo"
+name="actividad"></textarea>
+</p>
+
+</div>
+
+<!-- DATOS COMPLEMENTARIOS -->
+
+<div class="seccion">
+
+<h2>DATOS COMPLEMENTARIOS</h2>
+
+<textarea class="texto-largo"
+name="complementarios"></textarea>
+
+</div>
+
+<p class="nota">
+Todo lo expuesto anteriormente podrá ser
+acreditado, en caso de solicitud.
+<br>
+(lugar y fecha)
+</p>
+
+<!-- BOTONES -->
+
+<div class="botones">
+
+<input type="submit" value="Enviar">
+
+<input type="reset" value="Limpiar">
+
+</div>
+
+</td>
+</tr>
+
+</table>
+
+</form>
+
+<!-- CODIGO PARA MOSTRAR Y GUARDAR LA FOTO -->
+
+<script>
+
+var archivoFoto = document.getElementById("archivo-foto");
+var imagenFoto = document.getElementById("imagen-foto");
+var textoFoto = document.getElementById("texto-foto");
+var formulario = document.getElementById("curriculum");
+
+function mostrarFoto(datos) {
+    imagenFoto.src = datos;
+    imagenFoto.style.display = "block";
+    textoFoto.style.display = "none";
+}
+
+// Recuperar la foto al abrir la pagina
+
+try {
+    var fotoGuardada = localStorage.getItem("fotoCurriculum");
+
+    if (fotoGuardada) {
+        mostrarFoto(fotoGuardada);
+    }
+} catch (error) {
+    console.log("No se pudo recuperar la foto");
+}
+
+// Seleccionar y guardar la fotografia
+
+archivoFoto.addEventListener("change", function() {
+
+    var archivo = this.files[0];
+
+    if (!archivo) {
+        return;
+    }
+
+    if (!archivo.type.startsWith("image/")) {
+        alert("Seleccione una imagen válida");
+        return;
+    }
+
+    var lector = new FileReader();
+
+    lector.onload = function(evento) {
+
+        var imagenTemporal = new Image();
+
+        imagenTemporal.onload = function() {
+
+            var canvas = document.createElement("canvas");
+
+            var escala = Math.min(
+                1,
+                480 / imagenTemporal.width,
+                600 / imagenTemporal.height
+            );
+
+            canvas.width = Math.round(imagenTemporal.width * escala);
+            canvas.height = Math.round(imagenTemporal.height * escala);
+
+            var contexto = canvas.getContext("2d");
+
+            contexto.drawImage(
+                imagenTemporal,
+                0,
+                0,
+                canvas.width,
+                canvas.height
+            );
+
+            var imagenReducida = canvas.toDataURL("image/jpeg", 0.8);
+
+            mostrarFoto(imagenReducida);
+
+            try {
+                localStorage.setItem(
+                    "fotoCurriculum",
+                    imagenReducida
+                );
+            } catch (error) {
+                alert("La foto se muestra, pero no pudo guardarse en este navegador.");
+            }
+
+        };
+
+        imagenTemporal.src = evento.target.result;
+
+    };
+
+    lector.readAsDataURL(archivo);
+
+});
+
+// Boton Limpiar
+
+formulario.addEventListener("reset", function() {
+
+    imagenFoto.removeAttribute("src");
+    imagenFoto.style.display = "none";
+    textoFoto.style.display = "block";
+
+    try {
+        localStorage.removeItem("fotoCurriculum");
+    } catch (error) {
+        console.log("No se pudo borrar la foto guardada");
+    }
+
+});
+
+// Boton Enviar (demostracion)
+
+formulario.addEventListener("submit", function(evento) {
+
+    evento.preventDefault();
+
+    alert("Formulario de práctica. Los datos no se envían a un servidor.");
+
+});
+
+</script>
+
+</body>
+</html>
+
